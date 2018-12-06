@@ -1,0 +1,32 @@
+<%= form_with(model: corvette, local: true) do |form| %>
+  <% if corvette.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(corvette.errors.count, "error") %> prohibited this corvette from being saved:</h2>
+
+      <ul>
+      <% corvette.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :body_style %>
+    <%= form.text_field :body_style %>
+  </div>
+
+  <div class="field">
+    <%= form.label :miles %>
+    <%= form.text_field :miles %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

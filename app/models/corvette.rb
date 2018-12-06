@@ -1,0 +1,2 @@
+class Corvette < ApplicationRecord
+end
